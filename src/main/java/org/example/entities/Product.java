@@ -24,13 +24,26 @@ public class Product {
                     ", price=" + price +
                     '}';
         }
-    public static Product createRandomProduct(long id) {
+    public static Product createRandomProduct() {
+        long newProdId = new Random().nextLong();
         ProductInfo productInfo = ProductInfo.getRandomProductInfo();
-        return new Product(id, productInfo.name, productInfo.category, productInfo.price);
+        return new Product(newProdId, productInfo.name, productInfo.category, productInfo.price);
     }
 
     public long getId() {
         return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public double getPrice() {
+        return price;
     }
 
     public void setId(long id) {
